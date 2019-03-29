@@ -1,0 +1,11 @@
+* {
+	font-size: 64px;
+	font-family: Arial;
+}
+button.card {
+	height:100px;
+	width:100px;
+}
+button:disabled {
+  color: black;
+}

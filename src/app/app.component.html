@@ -1,0 +1,26 @@
+<div>
+  <span>score: {{desk.getScore()}} </span>
+</div>
+<div>
+  <button 
+    class="card" 
+    [@found]="card.getPair().isFound()" 
+    *ngFor="let card of desk.getCards()"
+    type="button" 
+    (click)="desk.click(card)" 
+    [disabled]="card.isTurned() || card.getPair().isFound()"
+  >
+    {{card.getPair().isFound() || card.isTurned() ? card.getPair().getTitle() : '?'}}
+  </button>
+  <!-- for debugging
+  <span>turned: {{card.isTurned()}} - found: {{card.getPair().isFound()}}</span>
+  -->
+</div>
+<div>
+  <button 
+    (click)="newDesk()" 
+    type="button"
+  >
+    reset
+  </button>
+</div>
